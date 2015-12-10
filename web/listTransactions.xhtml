@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Transactions List</title>
+    </h:head>
+    <h:body>
+        <h1/>Transactions Listed from Oracle Database
+        
+        <h:dataTable value="#{transactionBean.transactionList}" var="transactions"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row"
+                     border="1"
+                     >
+            <h:column>
+                <f:facet name="header">
+                    Date
+                </f:facet>#{transactions.date}
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    Amount
+                </f:facet>#{transactions.amount}
+            </h:column>
+            
+        </h:dataTable>
+        
+        <h:outputLabel value="Total: ${transactionBean.total}"/>
+        
+        <h:form>
+            <h:commandButton value="Enter a new transaction" action="enterTransaction.xhtml"></h:commandButton>
+        </h:form>
+        
+            
+    </h:body>
+</html>
+
