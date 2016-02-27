@@ -24,7 +24,7 @@ public class TransactionBean implements Serializable {
 
     private final String jdbcURL = "jdbc:oracle:thin:@//localhost:1521/XE";
     private final String userid = "jeremy";
-    private final String password = "JKha3454";
+    private final String password = "";
     private Connection connection;
     private OracleDataSource datasource;
     
